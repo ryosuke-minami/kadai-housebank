@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('signup','Auth/Registration@showRegistrationForm')->name('signup.get');
+Route::post('signup','Auth/Registration@register')->name('signup.post');
