@@ -1,5 +1,5 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/">TOP</a>
         
@@ -9,11 +9,17 @@
         
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
-            <ul class="nav navbar-nav navbar-right">
-                {{-- ユーザ登録ページへのリンク --}}
-                <li>{!! link_to_route('signup.get','ユーザ登録',[],['class'=>'nav-link']) !!}</li>
-                {{-- ログインページへのリンク --}}
-                <li class="nav-item"><a href="#" class="nav-link">ログイン</a></li>
+            <ul class="navbar-nav">
+                @if(Auth::check())
+                    <li class="nav-item" style="color:white">ユーザ名：{{Auth::user()->name}}　</li>
+                    <li class="nav-item">{!! link_to_route('houses.create','空き家登録',[],['text-decoration'=>'none','style'=>'color:white']) !!}　</li>
+                    <li class="nav-item">{!! link_to_route('logout.get','ログアウト',[],['text-decoration'=>'none','style'=>'color:white']) !!}</li>
+                @else
+                    {{-- ユーザ登録ページへのリンク --}}
+                    <li class="nav-item">{!! link_to_route('signup.get','ユーザ登録',[],['class'=>'nav-link']) !!}</li>
+                    {{-- ログインページへのリンク --}}
+                    <li class="nav-item">{!! link_to_route('login','ログイン',[],['class'=>'nav-link']) !!}</li>
+                @endif
             </ul>
         </div>
     </nav>
