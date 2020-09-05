@@ -37,7 +37,7 @@ class HousesController extends Controller
         $user=\Auth::user();
         $house=new House;
         if($request->picture==null){
-            $house->picture="データ無し";
+            $house->picture="";
         }
         else{
             $house->picture=$request->picture;
@@ -58,7 +58,7 @@ class HousesController extends Controller
         $house->age=$request->age;
         $house->price=$request->price;
         if($request->overview==null){
-            $house->overview="データ無し";
+            $house->overview="";
         }
         else{
             $house->overview=$request->overview;
@@ -89,12 +89,12 @@ class HousesController extends Controller
         }
         
     }
-    
+
     public function update(Request $request,$id)
     {
         $house=House::findOrFail($id);
         if($request->picture==null){
-            $house->picture="データ無し";
+            $house->picture="";
         }
         else{
             $house->picture=$request->picture;
@@ -114,7 +114,7 @@ class HousesController extends Controller
         $house->age=$request->age;
         $house->price=$request->price;
         if($request->overview==null){
-            $house->overview="データ無し";
+            $house->overview="";
         }
         else{
             $house->overview=$request->overview;
