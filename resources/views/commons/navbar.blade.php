@@ -1,7 +1,7 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-success">
         {{-- トップページへのリンク --}}
-        <a class="navbar-brand" href="/">TOP</a>
+        <a class="navbar-brand" href="/">物件一覧へ</a>
         
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>

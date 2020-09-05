@@ -69,8 +69,13 @@ class HousesController extends Controller
     
     public function show($id)
     {
-        $house=House::findOrFail($id);
-        return view('houses.show',['house'=>$house,]);
+        if(\Auth::check()){
+            $house=House::findOrFail($id);
+            return view('houses.show',['house'=>$house,]);
+        }
+        else{
+            return view('welcome');
+        }
     }
     
     public function edit($id)
@@ -80,7 +85,7 @@ class HousesController extends Controller
             return view('houses.edit',['house'=>$house,]);
         }
         else{
-            return view('/');
+            return redirect('/');
         }
         
     }
