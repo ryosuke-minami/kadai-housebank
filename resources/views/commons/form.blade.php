@@ -2,7 +2,7 @@
                     {!! Form::label('contact_name','氏名') !!}
                     {!! Form::text('contact_name',null,['class'=>'form-control','align'=>'center']) !!}
                 </div>
-            
+
                 <div class="form-group">
                     {!! Form::label('contact_tel','電話番号') !!}
                     {!! Form::text('contact_tel',null,['class'=>'form-control','placeholder'=>'ハイフン(-)なし']) !!}

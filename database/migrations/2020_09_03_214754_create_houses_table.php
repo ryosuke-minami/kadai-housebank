@@ -19,7 +19,7 @@ class CreateHousesTable extends Migration
             $table->string('address');
             $table->string('postal_code');
             $table->string('age');
-            $table->string('price');
+            $table->bigInteger('price');
             $table->string('picture');
             $table->string('overview');
             $table->string('contact_name');

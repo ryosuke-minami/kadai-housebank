@@ -17,7 +17,7 @@
                 <tr>
                     {{--空き家詳細ページへのリンク--}}
                     <td class="text-center">{!! link_to_route('houses.show',$house->id,['house'=>$house->id]) !!}</td>
-                    <td class="text-center">￥{{$house->price}}円</td>
+                    <td class="text-center">￥{{number_format($house->price)}}円</td>
                     <td class="text-center">{{$house->updated_at}}</td>
                 </tr>
                 @endforeach

@@ -2,7 +2,7 @@
 @section('content')
 
     <h1 align="center">物件番号「{{$house->id}}」番の空き家の詳細ページ</h1>
-    <h2 align="center">価格：￥{{$house->price}}円</h2>
+    <h2 align="center">価格：￥{{number_format($house->price)}}円</h2>
     <br>
     <table class="table table-bordered table-striped table-sm">
         <tr>
@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <th class="text-center">価格</th>
-            <td class="text-center">￥{{$house->price}}円</td>
+            <td class="text-center">￥{{number_format($house->price)}}円</td>
         </tr>
         <tr>
             <th class="text-center">写真URL</th>
